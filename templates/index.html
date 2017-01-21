@@ -4,22 +4,22 @@
   </head>
   <body>
     <h1>ModularIOT Control Page</h1>
-    
+
     Light:
-    <form action="turn_on/light" method="post">      
+    <form action="devices/0/turn_on" method="post">
       <input type="submit" value="Turn On">
     </form>
-    <form action="turn_off/light" method="post">
+    <form action="devices/0/turn_off" method="post">
       <input type="submit" value="Turn Off">
     </form>
 
     <br>
-    
+
     Fan:
-    <form action="turn_on/fan" method="post">
-      <input type="submit" value="Turn On">      
+    <form action="devices/1/turn_on" method="post">
+      <input type="submit" value="Turn On">
     </form>
-    <form action="turn_off/fan" method="post">
+    <form action="devices/1/turn_off" method="post">
       <input type="submit" value="Turn Off">
     </form>
   </body>
