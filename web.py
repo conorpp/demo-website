@@ -17,8 +17,10 @@ def update():
     global LIGHT_STATE
     LIGHT_STATE = not LIGHT_STATE
     if LIGHT_STATE:
+        ## Any code in this block will be run when the switch is turned on.
         print 'Light now on!'
     else:
+        ## Any code in this block will be run when the switch is turned off.
         print 'Light now off!'
     return redirect(url_for('home'))
 
