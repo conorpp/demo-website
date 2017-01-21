@@ -1,6 +1,6 @@
 * Demo Website
 
-This is a basic website for controlling an IOT device switch. To control a device, modify the 'update' function in file 'web.py' so that it sends a message to the device when the button is switched on or off. The place where code should be added is marked with comments.
+This is a basic website for controlling an IOT device switch. To control a device, change the methods in the 'LightSwitch' and 'FanSwitch' code to send a message to the device you want to change.
 
 * Usage
 
