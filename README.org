@@ -1,0 +1,21 @@
+* Demo Website
+
+This is a basic website for controlling an IOT device switch. To control a device, modify the 'update' function in file 'web.py' so that it sends a message to the device when the button is switched on or off. The place where code should be added is marked with comments.
+
+* Usage
+
+To run the web server just enter the following command.
+
+#+BEGIN_SRC
+python web.py
+#+END_SRC
+
+Note, the call to 'app.run' starts the web server and is used to control important behavior. The keyword argument 'debug' is used to tell the server what kind of error messages to supply. If debug is boolean true, then if the server has an error, a stack trace and an interactive REPL will be provided for debugging. Debug should never be on in production because arbitrary code can be run by anyone who can crash the server. If debug is off, a boring and infuriating 500 page will be displayed. By default, debug mode is off. The host argument is necessary to make the program visible to more than just localhost. Letting the 'host' keyword be equal to the string '0.0.0.0' will make the server public. Other machines on the network will then be able to talk to it. By default, the server can only be reached from the machine it's hosted.
+
+#+BEGIN_SRC python
+## Different ways the web server can be started.
+app.run(debug = True)
+app.run(debug = False)
+app.run(host = '0.0.0.0')
+app.run()
+#+END_SRC
