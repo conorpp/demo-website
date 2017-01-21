@@ -4,9 +4,23 @@
   </head>
   <body>
     <h1>ModularIOT Control Page</h1>
-    <form action="update" method="post">
-      Light:
-      <input type="submit" value="{{light_state_on_click}}">      
+    
+    Light:
+    <form action="turn_on/light" method="post">      
+      <input type="submit" value="Turn On">
+    </form>
+    <form action="turn_off/light" method="post">
+      <input type="submit" value="Turn Off">
+    </form>
+
+    <br>
+    
+    Fan:
+    <form action="turn_on/fan" method="post">
+      <input type="submit" value="Turn On">      
+    </form>
+    <form action="turn_off/fan" method="post">
+      <input type="submit" value="Turn Off">
     </form>
   </body>
 </html>
