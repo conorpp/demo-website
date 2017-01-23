@@ -1,26 +1,51 @@
 <html>
   <head>
     <title>ModularIOT Control Page</title>
+    <style type="text/css">body{margin:40px
+auto;max-width:650px;line-height:1.6;font-size:18px;color:#444;padding:0
+10px}h1,h2,h3{line-height:1.2}</style>
   </head>
   <body>
+    <div align="center">
     <h1>ModularIOT Control Page</h1>
 
-    Light:
-    <form action="devices/0/turn_on" method="post">
-      <input type="submit" value="Turn On">
-    </form>
-    <form action="devices/0/turn_off" method="post">
-      <input type="submit" value="Turn Off">
-    </form>
+
+
+    <h3>Light</h3>
+
+    <table>
+      <tr>
+	<td>
+	  <form action="devices/0/turn_on" method="post">
+	    <input type="submit" value="Turn On">
+	  </form>
+	</td>
+	<td>
+	  <form action="devices/0/turn_off" method="post">
+	    <input type="submit" value="Turn Off">
+	  </form>
+	</td>
+      </tr>
+    </table>
 
     <br>
 
-    Fan:
-    <form action="devices/1/turn_on" method="post">
-      <input type="submit" value="Turn On">
-    </form>
-    <form action="devices/1/turn_off" method="post">
-      <input type="submit" value="Turn Off">
-    </form>
+    <h3>Fan</h3>
+    
+    <table>
+      <tr>
+	<td>
+	  <form action="devices/1/turn_on" method="post">
+	    <input type="submit" value="Turn On">
+	  </form>
+	</td>
+	<td>
+	  <form action="devices/1/turn_off" method="post">
+	    <input type="submit" value="Turn Off">
+	  </form>
+	</td>
+      </tr>
+    </table>
+    </div>
   </body>
 </html>
