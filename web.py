@@ -12,14 +12,14 @@ class FanSwitch(object):
     def turn_on(self):
         print 'Fan on!'
     def turn_off(self):
-        print 'Fan off!'        
+        print 'Fan off!'
 
 @app.route('/', methods = ['GET'])
 def home():
     'Return a page with control widgets for all devices.'
     return render_template('index.html')
 
-@app.route('/turn_on/<device_name>', methods = ['POST'])
+@app.route('/devices/<device_name>/turn_on', methods = ['POST'])
 def turn_on(device_name):
     'Turn on the given device.'
     if device_name not in DEVICES.keys():
@@ -27,7 +27,7 @@ def turn_on(device_name):
     DEVICES[device_name].turn_on()
     return redirect(url_for('home'))
 
-@app.route('/turn_off/<device_name>', methods = ['POST'])
+@app.route('/devices/<device_name>/turn_off', methods = ['POST'])
 def turn_off(device_name):
     'Turn off the given device.'
     if device_name not in DEVICES.keys():
@@ -37,8 +37,8 @@ def turn_off(device_name):
 
 if __name__ == '__main__':
     DEVICES = {
-        'light' : LightSwitch(),
-        'fan' : FanSwitch(),
+        '0' : LightSwitch(),
+        '1' : FanSwitch(),
     }
     app.run(debug = True, host = '0.0.0.0')
-    
+
