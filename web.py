@@ -2,25 +2,47 @@ from flask import Flask, render_template, redirect, url_for, abort
 
 app = Flask(__name__)
 
-class LightSwitch(object):
+class Device(object):
+    name = 'Device'
+    power = False
+
     def turn_on(self):
-        print 'Light on!'
-        f = open('/tmp/light', 'w')
+        self.power = True
+        f = open('/tmp/'+self.name, 'w')
         f.write('ON')
+
     def turn_off(self):
-        print 'Light now off!'
-        f = open('/tmp/light', 'w')
+        self.power = False
+        f = open('/tmp/'+self.name, 'w')
         f.write('OFF')
 
-class FanSwitch(object):
+    def set_speed(self):
+        'example'
+        raise NotImplementedError('set_speed')
+
+    def __repr__(self):
+        'Give readable information about device state'
+        return '%s, powered: %s' % (self.name,self.power)
+
+
+
+class LightSwitch(Device):
+    name = 'light'
     def turn_on(self):
-        print 'Fan on!'
-        f = open('/tmp/fan', 'w')
-        f.write('ON')
+        super(LightSwitch, self).turn_on()
+        print self
     def turn_off(self):
-        print 'Fan off!'
-        f = open('/tmp/fan', 'w')
-        f.write('OFF')
+        super(LightSwitch, self).turn_off()
+        print self
+
+class FanSwitch(Device):
+    name = 'fan'
+    def turn_on(self):
+        super(LightSwitch, self).turn_on()
+        print self
+    def turn_off(self):
+        super(LightSwitch, self).turn_off()
+        print self
 
 @app.route('/', methods = ['GET'])
 def home():
