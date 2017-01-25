@@ -5,14 +5,22 @@ app = Flask(__name__)
 class LightSwitch(object):
     def turn_on(self):
         print 'Light on!'
+        f = open('/tmp/light', 'w')
+        f.write('ON')
     def turn_off(self):
         print 'Light now off!'
+        f = open('/tmp/light', 'w')
+        f.write('OFF')
 
 class FanSwitch(object):
     def turn_on(self):
         print 'Fan on!'
+        f = open('/tmp/fan', 'w')
+        f.write('ON')
     def turn_off(self):
         print 'Fan off!'
+        f = open('/tmp/fan', 'w')
+        f.write('OFF')
 
 @app.route('/', methods = ['GET'])
 def home():
